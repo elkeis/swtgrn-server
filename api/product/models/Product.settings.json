@@ -1,0 +1,38 @@
+{
+  "connection": "default",
+  "collectionName": "products",
+  "info": {
+    "name": "product",
+    "description": "Продукт: Пироженное, Торт"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": [
+      "created_at",
+      "updated_at"
+    ],
+    "comment": ""
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": true
+    },
+    "price": {
+      "type": "float",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    },
+    "tags": {
+      "collection": "tags"
+    }
+  }
+}
